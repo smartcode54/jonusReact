@@ -11,6 +11,8 @@ import Progress from './component/Progress';
 import ProgressBar from './component/ProgressBar';
 import FinishScreen from './component/FinishScreen';
 import Timer from './component/Timer'; // Add this import
+
+const SECONDS_PER_QUESTION = 30;
 const initialState = {
   questions: [],
   status: 'loading', // 'loading', 'error', 'active', 'finished', newAnser, nextQuestion, restart
@@ -42,7 +44,7 @@ function reducer(state, action) {
         index: 0,
         answer: null,
         points: 0,
-        secondsRemaining: state.questions.length * 30, // Set timer to 7 minutes
+        secondsRemaining: state.questions.length * SECONDS_PER_QUESTION, // Set timer to 7 minutes
       };
     case 'tick':
       return {
