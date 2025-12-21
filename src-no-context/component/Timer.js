@@ -1,9 +1,6 @@
 import React from 'react'
-import { useQuiz } from '../context/QuizContext'
 
-export default function Timer() {
-  const { secondsRemaining } = useQuiz();
-  
+export default function Timer({ secondsRemaining }) {
   if (secondsRemaining === null) return null;
 
   const minutes = Math.floor(secondsRemaining / 60);
